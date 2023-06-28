@@ -1,0 +1,29 @@
+--QUERY:to implement case for student grading
+--PL/SQL Block:
+declare
+	grade varchar(1);
+begin
+	grade:='&grade';
+	case grade
+	when 'O' then
+	  dbms_output.put_line('outstanding');
+	when 'A' then
+	  dbms_output.put_line('Excellent');
+	when 'B' then
+	  dbms_output.put_line('Good');
+	when 'C' then
+	  dbms_output.put_line('Average');
+	when 'D' then
+	  dbms_output.put_line('Below average');
+	else
+	  dbms_output.put_line('FAIL');
+	end case;
+end;
+/
+--output:
+Enter value for grade: O
+old   4:        grade:='&grade';
+new   4:        grade:='O';
+outstanding
+PL/SQL procedure successfully completed.
+/
